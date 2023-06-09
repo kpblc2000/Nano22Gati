@@ -3,6 +3,7 @@ using Nano22GatiCore.Infrastructure.Commands;
 using Nano22GatiCore.Interfaces;
 using Nano22GatiCore.ViewModels.Base;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Nano22GatiCore.ViewModels
 {
@@ -47,13 +48,13 @@ namespace Nano22GatiCore.ViewModels
         /// <summary>
         /// Список слоев, включенных в паспорт
         /// </summary>
-        public List<string> LayerNamesToPassportList
+        public List<LayerToPassport> LayerNamesToPassportList
         {
             get => _layerNamesToPassportList;
             set => Set(ref _layerNamesToPassportList, value);
         }
 
-        public string SelectedPassportName
+        public LayerToPassport SelectedPassportName
         {
             get => _selectedPassportLayerName;
             set => Set(ref _selectedPassportLayerName, value);
@@ -84,13 +85,13 @@ namespace Nano22GatiCore.ViewModels
         }
 
         private List<string> _layerNamesList;
-        private List<string> _layerNamesToPassportList;
+        private List<LayerToPassport> _layerNamesToPassportList;
         private INCadRepository _cadRepository;
         private IMessageService _messageService;
         private List<Precision> _precisionsList;
         private Precision _selectedPrecision;
         private string _selectedDrawingLayerName;
-        private string _selectedPassportLayerName;
+        private LayerToPassport _selectedPassportLayerName;
         private string _passportName;
     }
 }

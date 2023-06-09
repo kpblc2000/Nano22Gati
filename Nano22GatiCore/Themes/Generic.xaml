@@ -14,8 +14,6 @@
                 Value="23" />
         <Setter Property="MinWidth"
                 Value="40" />
-        <Setter Property="Template"
-                Value="{StaticResource CustomContentTemplate}" />
         <Style.Triggers>
             <Trigger Property="IsCancel"
                      Value="True">
